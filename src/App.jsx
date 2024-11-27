@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <HashRouter basename="/Chandu-s-Pokedex">
+      <HashRouter>
         <Routes>
           <Route path = '/' element = { 
             <>
