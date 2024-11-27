@@ -1,5 +1,5 @@
 
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Input from '../src/Components/Input/Input'
 import PokemonDisplayPage from './Components/Pokemon Display Page/PokemonDisplayPage';
 import Pokecard from './Components/Pokecard/Pokecard';
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <HashRouter basename="/Chandu-s-Pokedex">
+      <BrowserRouter basename="/Chandu-s-Pokedex">
         <Routes>
           <Route path = '/' element = { 
             <>
@@ -34,7 +34,7 @@ function App() {
           />
           <Route path='/Pokemon_Data' element = {<PokemonDisplayPage  selectedPokemon = {selectedPokemon} setInput = {setInput} setSelectedPokemon= {setSelectedPokemon} />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </>
   )
 }
