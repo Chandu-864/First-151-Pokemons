@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Chandu-s-Pokedex">
         <Routes>
           <Route path = '/' element = { 
             <>
