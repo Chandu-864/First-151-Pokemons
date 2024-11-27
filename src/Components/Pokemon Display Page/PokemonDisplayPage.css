@@ -1,0 +1,360 @@
+.body-page {
+    width: 100vw;
+}
+.back-arrow {
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 20px;
+    top: 5px;
+    left: 10px;
+    position: sticky;
+    z-index: 10;
+    cursor: pointer;
+    background: rgb(234, 232, 232);
+    color: black;
+    transition: background 0.3s ease;
+}
+
+.back-arrow:hover {
+    background: black;
+    color: white;
+}
+
+.page {
+    width: 65%;
+    height: 100%;
+    margin: 0px auto;
+    color: black;
+    background: rgb(242, 241, 241);
+    position: relative;
+}
+
+.poke-name {
+    width: 100%;
+    padding: 10px 0px;
+    position: sticky;
+    text-align: center;
+    top: 0px;
+    background: rgb(32, 31, 31);
+    color: white;
+    animation: slide-top 0.3s ease forwards;
+    z-index: 10;
+}
+
+.page .poke-index {
+    padding: 15px;
+    position: absolute;
+    right: 10px;
+}
+
+.default-img {
+    animation: slide-left 0.3s ease forwards;
+}
+
+.types {
+    max-width: fit-content;
+}
+
+.types h2 {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    animation: slide-right 0.3s ease forwards;
+}
+
+.page .type-image {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sprite-images {
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.sprite-images img {
+    width: 130px;
+    margin: 0px 40px;
+    opacity: 0;
+    animation: slide-down 0.3s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.audio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px 0px 0px;
+}
+
+.stat-heading, .profile-head, .move-heading{
+    text-align: left;
+    width: 90%;
+    margin: 0px auto;
+    padding: 15px 0px;
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+.stats-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 5px 50px;
+    max-width: 100%;
+    justify-content: space-around;
+}
+
+.stats-card .stat-item {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    width: 85%;
+    justify-content: space-around;
+}
+
+.stats-card .stat-item .stat-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 35%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-card .stat-item .stat-bar {
+    display: flex;
+    width: 50%;
+    height: 40px;
+    background: rgb(206, 204, 204);
+    border-radius: 5px;
+    padding: 8px 5px;
+}
+
+.stats-card .stat-item .stat-bar .progress-bar {
+    border-radius: 5px;
+    animation: width-slide 0.5s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.stat-bar .progress-bar.hp {
+    background: #28a745;
+}
+.stat-bar .progress-bar.attack {
+    background: #dc3545;
+}
+.stat-bar .progress-bar.defense {
+    background: #007bff;
+}
+.stat-bar .progress-bar.special_attack {
+    background: #fd7e14;
+}
+.stat-bar .progress-bar.special_defense {
+    background: #6f42c1;
+}
+.stat-bar .progress-bar.speed {
+    background: #ffc107;
+}
+
+.profile {
+    box-shadow: 0px 0px 10px;
+    border-radius: 5px;
+    width: max-content;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 8px;
+    padding: 10px 0px;
+    padding: 10px 80px;
+}
+.profile p {
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.profile span {
+    font-size: 16px;
+    text-align: left;
+}
+
+.profile .abilities {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.poke-moves {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    width: 98%;
+    height: auto;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+
+.poke-moves button {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    width: max-content;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.poke-moves button:hover {
+    background: black;
+    color: white;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-top {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes width-slide {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--progress-width);
+    }
+}
+
+.move-heading .a-z, .z-a, .default-sort {
+    margin-right: 20px;
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+
+.move-heading .active {
+    transform: scale(1.2,1.2);
+    color: rgb(199, 57, 57);
+}
+
+.text-entry {
+    text-align: center;
+    font-weight: 600;
+    width: 95%;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 700px) {
+    .page {
+        width: 90%;
+    }
+    .type-image {
+        margin: 0px 70px;
+    }
+    .default-img {
+        width: 170px;
+    }
+    .sprite-images {
+        margin: 0px auto;
+    }
+    .sprite-images img {
+      width: 90px;
+      margin: 0px auto;
+    }
+    .profile {
+        padding: 10px 20px;
+    }
+    .poke-moves {
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    .poke-moves button {
+        padding: 5px 10px;
+        margin: 0px auto;
+        text-align: justify;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+    .back-arrow {
+        top: 10px;
+        left: 15px;
+        z-index: 20;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+    .page {
+        width: 70%;
+        margin: 0px auto;
+    }
+    .poke-moves {
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    .poke-moves button {
+        padding: 5px 10px;
+        margin: 0px auto;
+        text-align: justify;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .back-arrow {
+        top: 10px;
+        left: 0px;
+        color: red;
+        z-index: 20;
+    }
+}
+

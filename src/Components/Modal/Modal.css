@@ -1,0 +1,85 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-underlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-underlay:hover{
+    background: transparent;
+}
+
+.modal-content {
+    width: 50%;
+    position: relative;
+    background: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content span {
+    font-size: 20px;
+}
+
+.modal-content .otherP {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px 40px;
+    background: rgba(0, 0, 0, 0.11);
+}
+
+.modal-content .head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 95%;
+    text-align: center;
+}
+
+.modal-content .head h2 {
+    font-size: 25px;
+}
+
+.modal-content .head span {
+    font-size: 18px;
+}
+
+.modal-content .otherP p {
+    font-size: 16px;
+    font-weight: 600;
+}
+.modal-content .otherP span {
+    font-size: 17px;
+}
+
+@media screen and (max-width: 700px) {
+    .modal-content .otherP {
+        display: none;
+    }
+}

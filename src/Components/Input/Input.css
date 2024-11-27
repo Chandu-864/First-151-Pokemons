@@ -1,0 +1,21 @@
+.input-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-field label img {
+    width: 120px;
+    height: fit-content;
+    padding-right: 10px;
+}
+
+.input-field input {
+    width: 40%;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    border: 1px grey solid;
+}

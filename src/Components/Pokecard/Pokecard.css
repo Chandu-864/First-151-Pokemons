@@ -1,0 +1,89 @@
+.grid-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 0px 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    background: rgb(239, 236, 236);
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.card:hover img {
+    transform: scale(0.8, 0.8);
+}
+
+.card img {
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.scroll-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll {
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgb(206, 204, 204);
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px auto 40px auto;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.4s;
+}
+
+button:hover {
+    background: rgb(19, 19, 19);
+    color: rgb(252, 247, 247);
+}
+
+@media screen and (max-width:700px) {
+    .grid-layout {
+        padding: 5px 10px;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        width: 95%;
+    }
+    .card {
+        width: 100%;
+    }
+    .card img {
+        width: 80px;
+    }
+    .card h2 {
+        font-size: 15px;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 1200px) {
+    .grid-layout {
+        padding: 5px 10px;
+        grid-template-columns: auto auto auto auto;
+        gap: 10px;
+        width: 95%;
+    }
+    .card {
+        width: 100%;
+    }
+    .card img {
+        width: 90px;
+    }
+    .card h2 {
+        font-size: 17px;
+    }
+}
