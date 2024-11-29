@@ -230,7 +230,7 @@ useEffect(() => {
         <h1 className='poke-name'>{name.slice(0,1).toUpperCase() + name.slice(1) }</h1>
         <h2 className='poke-index'>#{getFullPokedexNumber(selectedPokemon-1)}</h2>
         <div className='type-image'>
-        <img className="default-img" src={'/Pokemons/' + getFullPokedexNumber(selectedPokemon-1) + ".png"} draggable={false} alt={`${name} large-img`} width={250} />
+        <img className="default-img" src={'./Pokemons/' + getFullPokedexNumber(selectedPokemon-1) + ".png"} draggable={false} alt={`${name} large-img`} width={250} />
         <div className='types'>
             {
               types.map( (typeObj, typeInd) => {

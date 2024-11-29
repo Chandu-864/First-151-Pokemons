@@ -23,7 +23,7 @@ export const Pokecard = (props) => {
           filteredInput.map ( (pokemon, pokIndex) => {
             return (
               <button className='card' key={pokIndex} onClick={ () => cardFunction(pokemon, pokIndex)} >
-                <img src={'/Pokemons/' + getFullPokedexNumber(first151Pokemon.indexOf(pokemon)) + '.png'} draggable={false} />
+                <img src={'./Pokemons/' + getFullPokedexNumber(first151Pokemon.indexOf(pokemon)) + '.png'} draggable={false} />
                 <h2>{pokemon}</h2>
                 <h2>{getFullPokedexNumber(first151Pokemon.indexOf(pokemon))}</h2>
               </button>
