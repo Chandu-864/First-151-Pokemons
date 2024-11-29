@@ -39,7 +39,7 @@ useEffect(() => {
       console.error("Error parsing saved Pokemon", error);
     }
   }
-}, []);
+}, [selectedPokemon]);
 
 // Save selected Pokemon to localStorage whenever it changes
 useEffect(() => {
