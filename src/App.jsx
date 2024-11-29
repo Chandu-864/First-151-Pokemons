@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <HashRouter basename="/First-151-Pokemons">
+      <HashRouter>
         <Routes>
           <Route path = '/' element = { 
             <>
