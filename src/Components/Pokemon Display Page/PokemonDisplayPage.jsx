@@ -28,6 +28,16 @@ export const PokemonDisplayPage = (props) => {
   const {name, weight, height, abilities, stats, types, moves, species, sprites, held_items, cries, base_experience} = data || {};
 
 
+  useEffect(() => {
+    if (selectedPokemon) { // Only save if selectedPokemon is valid
+      try {
+        localStorage.setItem("selected-Poke", JSON.stringify(selectedPokemon));
+      } catch (error) {
+        console.error("Error saving Pokemon to localStorage", error);
+      }
+    }
+  }, [selectedPokemon]);
+
   // Load saved Pokemon from localStorage when the component mounts
 useEffect(() => {
   const savedPokemon = localStorage.getItem("selected-Poke");
@@ -42,15 +52,6 @@ useEffect(() => {
 }, []);
 
 // Save selected Pokemon to localStorage whenever it changes
-useEffect(() => {
-  if (selectedPokemon) { // Only save if selectedPokemon is valid
-    try {
-      localStorage.setItem("selected-Poke", JSON.stringify(selectedPokemon));
-    } catch (error) {
-      console.error("Error saving Pokemon to localStorage", error);
-    }
-  }
-}, [selectedPokemon]);
 
 
 
