@@ -8,6 +8,7 @@
     width: 120px;
     height: fit-content;
     padding-right: 10px;
+    object-fit: contain;
 }
 
 .input-field input {
@@ -21,7 +22,5 @@
 }
 
 @media screen and (max-width:700px) {
-    .input-field label img {
-        
-    }
+
 }
