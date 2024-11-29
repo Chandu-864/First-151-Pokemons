@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -19,8 +19,4 @@
     outline: 0;
     border-radius: 10px;
     border: 1px grey solid;
-}
-
-@media screen and (max-width:700px) {
-
 }
