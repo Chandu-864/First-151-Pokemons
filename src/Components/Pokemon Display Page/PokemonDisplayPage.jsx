@@ -142,7 +142,7 @@ useEffect(() => {
 
       try {
         setLoading(true);
-        const url = `https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`
+        const url = `https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`;
         const res = await fetch(url);
         const pokeData = await res.json();
 
@@ -162,7 +162,6 @@ useEffect(() => {
       }
       finally {
         setLoading(false)
-        setSe
       }
     }
 
@@ -231,8 +230,8 @@ useEffect(() => {
         <h1 className='poke-name'>{name.slice(0,1).toUpperCase() + name.slice(1) }</h1>
         <h2 className='poke-index'>#{getFullPokedexNumber(selectedPokemon-1)}</h2>
         <div className='type-image'>
-          <img className="default-img" src= {'./Pokemons/' + getFullPokedexNumber(selectedPokemon-1) + ".png"} draggable={false} alt= {`${name} larege-img`} width={250}/>
-          <div className='types'>
+        <img className="default-img" src={'./Pokemons/' + getFullPokedexNumber(selectedPokemon-1) + ".png"} draggable={false} alt={`${name} large-img`} width={250} />
+        <div className='types'>
             {
               types.map( (typeObj, typeInd) => {
                 return (
