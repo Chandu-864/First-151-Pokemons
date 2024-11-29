@@ -28,30 +28,33 @@ export const PokemonDisplayPage = (props) => {
   const {name, weight, height, abilities, stats, types, moves, species, sprites, held_items, cries, base_experience} = data || {};
 
 
+  // Load saved Pokemon from localStorage when the component mounts
   useEffect(() => {
-    if (selectedPokemon) { // Only save if selectedPokemon is valid
+    const savedPokemon = localStorage.getItem("selected-Poke");
+    if (savedPokemon) {
       try {
-        localStorage.setItem("selected-Poke", JSON.stringify(selectedPokemon));
+        const parsedPokemon = JSON.parse(savedPokemon);
+        setSelectedPokemon(parsedPokemon);
       } catch (error) {
-        console.error("Error saving Pokemon to localStorage", error);
+        console.error("Error parsing saved Pokemon", error);
       }
     }
-  }, [selectedPokemon]);
-
-  // Load saved Pokemon from localStorage when the component mounts
-useEffect(() => {
-  const savedPokemon = localStorage.getItem("selected-Poke");
-  if (savedPokemon) {
+  }, []);
+  
+  useEffect(() => {
     try {
-      const parsedPokemon = JSON.parse(savedPokemon);
-      setSelectedPokemon(parsedPokemon);
+      // Check if localStorage is available
+      if (typeof window !== 'undefined' && window.localStorage) {
+        if (selectedPokemon) {
+          localStorage.setItem("selected-Poke", JSON.stringify(selectedPokemon));
+        }
+      } else {
+        console.warn('localStorage is not available');
+      }
     } catch (error) {
-      console.error("Error parsing saved Pokemon", error);
+      console.error("Error saving Pokemon to localStorage", error);
     }
-  }
-}, []);
-
-// Save selected Pokemon to localStorage whenever it changes
+  }, [selectedPokemon]);
 
 
 
