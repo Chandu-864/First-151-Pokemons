@@ -29,32 +29,28 @@ export const PokemonDisplayPage = (props) => {
 
 
   // Load saved Pokemon from localStorage when the component mounts
-  useEffect(() => {
-    const savedPokemon = localStorage.getItem("selected-Poke");
-    if (savedPokemon) {
-      try {
-        const parsedPokemon = JSON.parse(savedPokemon);
-        setSelectedPokemon(parsedPokemon);
-      } catch (error) {
-        console.error("Error parsing saved Pokemon", error);
-      }
-    }
-  }, []);
-  
-  useEffect(() => {
+useEffect(() => {
+  const savedPokemon = localStorage.getItem("selected-Poke");
+  if (savedPokemon) {
     try {
-      // Check if localStorage is available
-      if (typeof window !== 'undefined' && window.localStorage) {
-        if (selectedPokemon) {
-          localStorage.setItem("selected-Poke", JSON.stringify(selectedPokemon));
-        }
-      } else {
-        console.warn('localStorage is not available');
-      }
+      const parsedPokemon = JSON.parse(savedPokemon);
+      setSelectedPokemon(parsedPokemon);
+    } catch (error) {
+      console.error("Error parsing saved Pokemon", error);
+    }
+  }
+}, []);
+
+// Save selected Pokemon to localStorage whenever it changes
+useEffect(() => {
+  if (selectedPokemon) { // Only save if selectedPokemon is valid
+    try {
+      localStorage.setItem("selected-Poke", JSON.stringify(selectedPokemon));
     } catch (error) {
       console.error("Error saving Pokemon to localStorage", error);
     }
-  }, [selectedPokemon]);
+  }
+}, [selectedPokemon]);
 
 
 
