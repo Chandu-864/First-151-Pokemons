@@ -18,24 +18,29 @@ export const Pokecard = (props) => {
 
   return (
     <>
-      <div className='grid-layout'>
-        {
-          filteredInput.map ( (pokemon, pokIndex) => {
-            return (
-              <button className='card' key={pokIndex} onClick={ () => cardFunction(pokemon, pokIndex)} >
-                <img src={'./Pokemons/' + getFullPokedexNumber(first151Pokemon.indexOf(pokemon)) + '.png'} draggable={false} />
-                <h2>{pokemon}</h2>
-                <h2>{getFullPokedexNumber(first151Pokemon.indexOf(pokemon))}</h2>
-              </button>
+      {filteredInput.length === 0 ? (
+        <p style={{color:'red', textAlign: 'center', fontSize: '18px'}}>No Pokemon found! Please try another search</p>
+        ): (
+              <div className='grid-layout'>
+                {
+                  filteredInput.map ( (pokemon, pokIndex) => {
+                    return (
+                      <button className='card' key={pokIndex} onClick={ () => cardFunction(pokemon, pokIndex)} >
+                        <img src={'./Pokemons/' + getFullPokedexNumber(first151Pokemon.indexOf(pokemon)) + '.png'} draggable={false} />
+                        <h2>{pokemon}</h2>
+                        <h2>{getFullPokedexNumber(first151Pokemon.indexOf(pokemon))}</h2>
+                      </button>
+                    )
+                  })
+                }
+              </div>
             )
-          })
-        }
-      </div>
-      {filteredInput.length > 20 && 
-        <div className='scroll-top'>
-          <button className='scroll' onClick={()=>scrollTo({top:0, left:0, behavior:"smooth"})}>Scroll-to-Top</button>
-        </div>
       }
+              {filteredInput.length > 20 && 
+                <div className='scroll-top'>
+                  <button className='scroll' onClick={()=>window.scrollTo({top:0, left:0, behavior:"smooth"})}>Scroll-to-Top</button>
+                </div>
+              }
     </>
   )
 }
