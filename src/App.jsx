@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/Chandu-s-Pokedex">
+      <BrowserRouter basename="/First-151-Pokemons">
         <Routes>
           <Route path = '/' element = { 
             <>
