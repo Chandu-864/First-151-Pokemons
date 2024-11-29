@@ -29,17 +29,7 @@ export const PokemonDisplayPage = (props) => {
 
 
   // Load saved Pokemon from localStorage when the component mounts
-useEffect(() => {
-  const savedPokemon = localStorage.getItem("selected-Poke");
-  if (savedPokemon) {
-    try {
-      const parsedPokemon = JSON.parse(savedPokemon);
-      setSelectedPokemon(parsedPokemon);
-    } catch (error) {
-      console.error("Error parsing saved Pokemon", error);
-    }
-  }
-}, []);
+
 
 // Save selected Pokemon to localStorage whenever it changes
 useEffect(() => {
@@ -51,6 +41,19 @@ useEffect(() => {
     }
   }
 }, [selectedPokemon]);
+
+
+useEffect(() => {
+  const savedPokemon = localStorage.getItem("selected-Poke");
+  if (savedPokemon) {
+    try {
+      const parsedPokemon = JSON.parse(savedPokemon);
+      setSelectedPokemon(parsedPokemon);
+    } catch (error) {
+      console.error("Error parsing saved Pokemon", error);
+    }
+  }
+}, []);
 
 
 
