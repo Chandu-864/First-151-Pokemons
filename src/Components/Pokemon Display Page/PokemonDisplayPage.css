@@ -46,7 +46,7 @@
 .page .poke-index {
     padding: 15px;
     position: absolute;
-    right: 10px;
+    right: 2px;
 }
 
 .default-img {
@@ -301,7 +301,7 @@
         width: 90%;
     }
     .type-image {
-        margin: 0px 70px;
+        margin: 0px 40px;
     }
     .default-img {
         width: 170px;
