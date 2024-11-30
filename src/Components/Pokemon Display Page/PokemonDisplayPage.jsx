@@ -293,7 +293,19 @@ useEffect(() => {
             <p>Base Expience: </p>
             <span>{base_experience}</span>
             <p>Held-itmes: </p>
-            <span>{(held_items && held_items.length > 0) ? held_items.map( (itemList)=>itemList.item.name.slice(0,1).toUpperCase() + itemList.item.name.slice(1)) : "No-items held"}</span>
+            {(held_items && held_items.length > 0) ? (
+              <span>
+                {held_items.map( (heldItem, heldIndex) => (
+                  <React.Fragment key = {heldIndex}>
+                    {(heldItem.item.name.slice(0,1).toUpperCase() + heldItem.item.name.slice(1)).replaceAll('-', ' ')}
+                    {(heldIndex < (held_items.length-1)) && ', '}
+                    {((heldIndex +1) % 2 === 0) && <br />}
+                  </React.Fragment>
+                ))}
+              </span>
+            ): 
+            <span>"No items held"</span>}
+              
             <p>Abilities: </p>
             <span> {abilities.map( (abilityName, abIndex) => (
               <React.Fragment key={abilityName.ability?.name}>
